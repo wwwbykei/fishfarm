@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=1280">
+    <meta name="robots" content="noindex, nofollow">
+    <title>양식장 연동 양성 시뮬레이터</title>
+	<link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="layout-sidebar">
+        <a href="index.html" class="header">
+            <img src="images/logo.png" alt="KTAT">
+        </a>
+        <ul class="menu">
+            <li>
+                <a href="index.html"><i>holiday_village</i>양식장 설계 시뮬레이터</a><!--선택한 메뉴에 active 클래스를 추가해 주세요.-->
+                <ul class="menu sub">
+                    <li>
+                        <a href="environment.html">환경 시뮬레이션</a><!--선택한 메뉴에 active 클래스를 추가해 주세요.-->
+                    </li>
+                    <li>
+                        <a href="raise.html">양성 시뮬레이션</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="water-simulator.html"><i>water_drop</i>양식장 연동 수처리 시뮬레이터</a>
+            </li>
+            <li>
+                <a href="raise-simulator.html" class="active"><i>vital_signs</i>양식장 연동 양성 시뮬레이터</a>
+            </li>
+        </ul>
+    </div>
+
+	<div class="layout-content">
+        <div class="page-header">
+            <h1>
+                <span>양식장 연동 양성 시뮬레이터</span>
+                <span class="fw-bold">넙치</span>
+            </h1>
+            <div class="align-right list-logo">
+                <img src="images/logo-keti.png" alt="한국전자기술연구원">
+                <img src="images/logo-pukyong.png" alt="부경대학교">
+                <img src="images/logo-etri.png" alt="한국전자통신연구원">
+            </div>
+        </div>
+		<div class="page-body">
+            <form>
+                <div class="section">
+                    <div class="header">
+                        <h3>기본 속성값 입력</h3>
+                    </div>
+                    <div class="body">
+                        <ul class="form column-4">
+                            <li class="form-item">
+                                <label>중량 예측 날짜</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>day</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!--//body-->
+                </div><!--//section -->
+                <hr class="line">
+                <div class="section">
+                    <div class="header">
+                        <h3>양식장 연동 값 입력</h3>
+                        <a data-bs-toggle="modal" data-bs-target="#modal-help-water-connect" class="btn-m btn-icon">help</a>
+                        <button type="button" class="btn-m btn-outline">실측값 자동 입력</button>
+                    </div>
+                    <div class="body">
+                        <table class="table-form">
+                            <colgroup>
+                                <col width="40">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">일차</th>
+                                    <th scope="col">수온 (°C)</th>
+                                    <th scope="col">DO (mg/L)</th>
+                                    <th scope="col">개체 수 (마리)</th>
+                                    <th scope="col">개체 중량 (g)</th>
+                                    <th scope="col">사료 공급량 (Kg)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">7</th>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">8</th>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">9</th>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">10</th>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                    <td>
+                                        <input type="number">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5" class="text-red">&#8251; 최소 5일차 데이터를 입력해 주세요. 미입력 시 없는 데이터로 인식됩니다.</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <hr class="gutter-s">
+                        <!--버튼 누르기 전, 아래 코드 노출-->
+                        <button type="submit" class="btn-m btn-primary" style="width:320px">시뮬레이션 결과 보기</button>
+                                
+                        <!--버튼 누른 다음, 데이터 불러오기 전까지 아래 코드 노출-->
+                        <!-- <button type="submit" class="btn-m btn-primary btn-inactive" style="width:320px">시뮬레이션 수행중</button>
+                        <div class="progress"></div> -->
+                    </div><!--//body-->
+                </div><!--//section -->
+            </form>
+            <hr class="line">
+            <div class="section stretch">
+                <div class="header">
+                    <h3>시뮬레이션 결과</h3>
+                </div>
+                <div class="body">
+                    <!--데이터 불러오기 전, 내용 없는 경우-->
+                    <!-- <div class="empty">
+                        <h6>표시할 내용이 없습니다.</h6>
+                        <p>조회할 항목을 선택해 주세요.</p>
+                    </div> -->
+
+                    <!--데이터 불러온 경우-->
+                    <!--차트 넣을 위치
+                        - 크기 : 너비 100%, 높이 380px
+                        - x/y축 라인색 : rgba(#000,0.1)
+                        - x/y축 라벨 : 14px rgba(#000, 0.4)
+                        - 차트 라인 두께 : 2px
+                        - 차트 라인 색 : 
+                            - 파랑 #2B4486
+                            - 빨강 #B12C23
+                            - 그라디언트 background: linear-gradient(180deg, rgba(43,68,134,0.4) 0%, rgba(43,68,134,0.1) 100%);
+                        - 차트 라인 스타일 : solid
+                    -->
+                    <img src="images/chart-raise-result.png"><!--차트 적용하면 삭제해 주세요. (디자인 확인용)-->
+                </div><!--//body-->
+            </div><!--//section -->
+        </div><!--//page-body-->
+	</div><!--//layout-content-->
+
+    <!-- modal -->
+	<div class="modal fade modal-help" id="modal-help-water-basic" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">기본 속성값</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">close</button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">이름</th>
+                                <th scope="col">단위</th>
+                                <th scope="col">적정 범위</th>
+                                <th scope="col">설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">생물 여과조 성능</th>
+                                <td>g/day</td>
+                                <td>-</td>
+                                <td>생물 여과조 성능</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">산소 공급장치 성능</th>
+                                <td>g/day</td>
+                                <td>-</td>
+                                <td>산소 공급장치 성능</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">초기 개체 평균 중량</th>
+                                <td>g</td>
+                                <td>-</td>
+                                <td>평균 1개체 무게</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">초기 입식 개체수</th>
+                                <td>마리</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">폐사율</th>
+                                <td>%</td>
+                                <td></td>
+                                <td>전체 성장기간 동안의 폐사율(균등)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">사료 공급률</th>
+                                <td>%</td>
+                                <td>-</td>
+                                <td>하루 단위 사료 공급률 (3%)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">목표 배출구 DO농도</th>
+                                <td>mg/L</td>
+                                <td></td>
+                                <td>배출구 용존산소 목표 농도</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">수조 암모니아 농도 임계값</th>
+                                <td>mg/L</td>
+                                <td></td>
+                                <td>유해 암모니아 농도 임계값</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">TGC 계수</th>
+                                <td>-</td>
+                                <td>0.5~1</td>
+                                <td>(최종 체중의 1/3 제공 - 초기 체중의 1/3 제곱) / (기간 x 평균 수온)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!--//modal-body-->
+			</div><!--//modal-content-->
+		</div>
+	</div><!--//modal-->
+    <!-- modal -->
+	<div class="modal fade modal-help" id="modal-help-water-connect" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">양식장 연동 값</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">close</button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">이름</th>
+                                <th scope="col">단위</th>
+                                <th scope="col">적정 범위</th>
+                                <th scope="col">설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">수온</th>
+                                <td>°C</td>
+                                <td>-</td>
+                                <td>물 온도</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">DO</th>
+                                <td>mg/L</td>
+                                <td>-</td>
+                                <td>용존 산소량</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">개체 수</th>
+                                <td>마리</td>
+                                <td>-</td>
+                                <td>총 개체 수</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">개체 중량</th>
+                                <td>g</td>
+                                <td>-</td>
+                                <td>평균 1개체 중량</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">사료 공급량</th>
+                                <td>Kg</td>
+                                <td>-</td>
+                                <td>실제 사료 공급량</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!--//modal-body-->
+			</div><!--//modal-content-->
+		</div>
+	</div><!--//modal-->
+</body>
+</html>

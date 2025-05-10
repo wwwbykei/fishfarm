@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=1280">
+    <meta name="robots" content="noindex, nofollow">
+    <title>양식장 설계 시뮬레이터</title>
+	<link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="layout-sidebar">
+        <a href="index.html" class="header">
+            <img src="images/logo.png" alt="KTAT">
+        </a>
+        <ul class="menu">
+            <li>
+                <a href="index.html" class="active"><i>holiday_village</i>양식장 설계 시뮬레이터</a><!--선택한 메뉴에 active 클래스를 추가해 주세요.-->
+                <ul class="menu sub">
+                    <li>
+                        <a href="environment.html">환경 시뮬레이션</a><!--선택한 메뉴에 active 클래스를 추가해 주세요.-->
+                    </li>
+                    <li>
+                        <a href="raise.html">양성 시뮬레이션</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="water-simulator.html"><i>water_drop</i>양식장 연동 수처리 시뮬레이터</a>
+            </li>
+            <li>
+                <a href="raise-simulator.html"><i>vital_signs</i>양식장 연동 양성 시뮬레이터</a>
+            </li>
+        </ul>
+    </div>
+
+	<div class="layout-content">
+        <div class="page-header">
+            <h1>
+                <span>양식장 설계 시뮬레이터</span>
+            </h1>
+            <div class="align-right list-logo">
+               <img src="images/logo-keti.png" alt="한국전자기술연구원">
+                <img src="images/logo-pukyong.png" alt="부경대학교">
+                <img src="images/logo-etri.png" alt="한국전자통신연구원">
+            </div>
+        </div>
+		<div class="page-body">
+            <form class="section select">
+                <div class="header">
+                    <h3>시뮬레이션 종류와 어종을 선택하고 시뮬레이션 선택을 클릭하세요.</h3>
+                </div>
+                <div class="body">
+                    <div class="col">
+                        <h6 class="header">1. 시뮬레이션 종류를 선택해 주세요.</h6>
+                        <div class="btn-group">
+                            <button type="button" class="btn-img active"><!--선택한 버튼에 'active' 클래스를 추가해 주세요.-->
+                                <i class="img-material">device_thermostat</i>
+                                <p>환경 시뮬레이션</p>
+                            </button>
+                            <button type="button" class="btn-img">
+                                <i class="img-material">pediatrics</i>
+                                <p>양성 시뮬레이션</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h6 class="header">2. 어종을 선택해 주세요.</h6>
+                        <div class="btn-group">
+                            <button type="button" class="btn-img"><!--선택한 버튼에 'active' 클래스를 추가해 주세요.-->
+                                <i class="ico-flatfish"></i>
+                                <p>넙치</p>
+                            </button>
+                            <button type="button" class="btn-img btn-inactive">
+                                <span class="label">준비중</span>
+                                <i class="ico-eel"></i>
+                                <p>장어</p>
+                            </button>
+                            <button type="button" class="btn-img btn-inactive">
+                                <span class="label">준비중</span>
+                                <i class="ico-trout"></i>
+                                <p>송어</p>
+                            </button>
+                        </div>
+                    </div>
+                </div><!--//body-->
+                <button type="submit" class="btn-m btn-primary" style="width:320px">시뮬레이션 선택</button>
+            </form><!--//section -->
+        </div><!--//page-body-->
+	</div><!--//layout-content-->
+</body>
+</html>

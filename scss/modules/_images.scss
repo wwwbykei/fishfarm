@@ -1,0 +1,130 @@
+// @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
+// ---
+// modules - images
+// ---
+
+img,video{
+    max-width:100%;
+    height:auto;
+    // border-radius:inherit;
+}
+// .img{
+//     border-radius:$image-radius;
+//     background-color:$image-bgcolor;
+//     img{
+//         object-fit: cover;
+//         object-position: 50% 50%;
+//         width:100%;
+//         height:100%;
+//         z-index:10;
+//     }
+
+    // &.car,&.map{
+    //     position:relative;
+    //     &:before{
+    //         position:absolute;
+    //         top:50%;
+    //         left:50%;
+    //         margin-top:-16px;
+    //         margin-left:-16px;
+    //         font-size:4.8rem;
+    //         @include material-symbols-outlined;
+    //         color:$color-primary;
+    //         z-index:-1;
+    //     }
+    // }
+    // &.car{
+    //     width:23.12%;
+    //     height:100%;
+    //     @include bl;
+    //     &:before{
+    //         content:'directions_bus';
+    //     }
+    // }
+    // &.map{
+    //     &:before{
+    //         content:'map';
+    //     }
+    //     &:after{
+    //         content:'';
+    //         display:block;
+    //         padding-bottom: 100%;
+    //     }
+    // }
+// }
+// .icon-arrow-upward{
+//   @include bgi(icon/arrow-upward);
+// }
+
+
+i[class^="ico"]{
+    display:block;
+    width:5.6rem;
+    height:5.6rem;
+    @include bgs;
+}
+@mixin img-material{
+    display:block;
+    font-size:5.6rem;
+    line-height:1;
+    @include material-symbols-outlined;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 56
+}
+.img-material{
+    @include img-material;
+}
+.ico-flatfish{
+    @include bgi(ico-flatfish);
+    .btn-img.active &{
+        @include bgi(ico-flatfish-w);
+    }
+}
+.ico-eel{
+    @include bgi(ico-eel);
+    .btn-img.active &{
+        @include bgi(ico-eel-w);
+    }
+}
+.ico-trout{
+    @include bgi(ico-trout);
+    .btn-img.active &{
+        @include bgi(ico-trout-w);
+    }
+}
+// .ico-group{
+//   @include bgi(ico-group-gray);
+// }
+// .ico-location{
+//   @include bgi(ico-location);
+// }
+// .ico-logout{
+//   @include bgi(ico-logout);
+// }
+// .ico-point{
+//   @include bgi(ico-point-gray);
+// }
+// .ico-profile{
+//   @include bgi(ico-profile);
+// }
+// .ico-search{
+//   @include bgi(ico-search);
+// }
+// .ico-warning{
+//   @include bgi(ico-warning);
+// }
+// .active{
+//   .ico-ambulance{
+//     @include bgi(ico-ambulance-white);
+//   }
+//   .ico-group{
+//     @include bgi(ico-group-white);
+//   }
+//   .ico-point{
+//     @include bgi(ico-point-white);
+//   }
+// }

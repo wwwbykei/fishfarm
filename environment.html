@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=1280">
+    <meta name="robots" content="noindex, nofollow">
+    <title>환경 시뮬레이션</title>
+	<link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="layout-sidebar">
+        <a href="index.html" class="header">
+            <img src="images/logo.png" alt="KTAT">
+        </a>
+        <ul class="menu">
+            <li>
+                <a href="index.html"><i>holiday_village</i>양식장 설계 시뮬레이터</a><!--선택한 메뉴에 active 클래스를 추가해 주세요.-->
+                <ul class="menu sub">
+                    <li>
+                        <a href="environment.html" class="active">환경 시뮬레이션</a><!--선택한 메뉴에 active 클래스를 추가해 주세요.-->
+                    </li>
+                    <li>
+                        <a href="raise.html">양성 시뮬레이션</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="water-simulator.html"><i>water_drop</i>양식장 연동 수처리 시뮬레이터</a>
+            </li>
+            <li>
+                <a href="raise-simulator.html"><i>vital_signs</i>양식장 연동 양성 시뮬레이터</a>
+            </li>
+        </ul>
+    </div>
+
+	<div class="layout-content">
+        <div class="page-header">
+            <h1>
+                <span>환경 시뮬레이션</span>
+                <span class="fw-bold">넙치</span>
+            </h1>
+            <div class="align-right list-logo">
+                <img src="images/logo-keti.png" alt="한국전자기술연구원">
+                <img src="images/logo-pukyong.png" alt="부경대학교">
+                <img src="images/logo-etri.png" alt="한국전자통신연구원">
+            </div>
+        </div>
+		<div class="page-body">
+            <form>
+                <div class="section">
+                    <div class="header">
+                        <h3>기본 속성값 입력</h3>
+                        <a data-bs-toggle="modal" data-bs-target="#modal-help-environment" class="btn-m btn-icon">help</a>
+                    </div>
+                    <div class="body">
+                        <ul class="form column-4">
+                            <li class="form-item">
+                                <label>목표 출하량</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>Kg/㎡</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>사료 공급률</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>%</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>평균 수온</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>°C</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>생물여과조 성능</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>g/day</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>탈기장치 성능</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>g/day</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>산소 공급장치 성능</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>g/day</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>수조당 사육밀도</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>Kg/㎡</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>출력 수조 옵션</label>
+                                <div class="select-container">
+                                    <select>
+                                        <option disabled selected>선택</option>
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>유입구-배출구 산소 농도 차이</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>mg/L</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>유입구-배출구 질소 농도 차이</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>mg/L</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>유입구-배출구 CO₂ 농도 차이</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>mg/L</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <!--버튼 누르기 전, 아래 코드 노출-->
+                                <button type="submit" class="btn-m btn-primary">시뮬레이션 결과 보기</button>
+                                
+                                <!--버튼 누른 다음, 데이터 불러오기 전까지 아래 코드 노출-->
+                                <!-- <button type="submit" class="btn-m btn-primary btn-inactive">시뮬레이션 수행중</button>
+                                <div class="progress"></div> -->
+                            </li>
+                        </ul>
+                    </div><!--//body-->
+                </div><!--//section -->
+            </form>
+            <hr class="line">
+            <div class="section stretch">
+                <div class="header">
+                    <h3>시뮬레이션 결과</h3>
+                </div>
+                <div class="body">
+                    <!--데이터 불러오기 전, 내용 없는 경우-->
+                    <!-- <div class="empty">
+                        <h6>표시할 내용이 없습니다.</h6>
+                        <p>조회할 항목을 선택해 주세요.</p>
+                    </div> -->
+
+                    <!--데이터 불러온 경우-->
+                    <ul class="nav nav-tab">
+						<li><a data-bs-toggle="tab" href="#tab-oxygen" class="btn-m btn-outline active">산소 기준 유량</a></li>
+						<li><a data-bs-toggle="tab" href="#tab-nitrogen" class="btn-m btn-outline">질소 기준 유량</a></li>
+						<li><a data-bs-toggle="tab" href="#tab-carbon-dioxide" class="btn-m btn-outline">CO₂ 기준 유량</a></li>
+					</ul>
+                    <hr class="gutter-s">
+                    <div class="tab-content">
+                        <ul id="tab-oxygen" class="list-summary column-3 tab-pane active">
+                            <li class="summary-item">
+                                <i>water</i>
+                                <dl>
+                                    <dt>최적 유량</dt>
+                                    <dd>
+                                        <span class="value">1,430</span>
+                                        <span class="unit">L/min</span>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="summary-item">
+                                <i>water_medium</i>
+                                <dl>
+                                    <dt>수조 1개당 요구 수량</dt>
+                                    <dd>
+                                        <span class="value">1,050</span>
+                                        <span class="unit">L</span>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="summary-item">
+                                <i>oil_barrel</i>
+                                <dl>
+                                    <dt>수조 개수</dt>
+                                    <dd>
+                                        <span class="value">4</span>
+                                        <span class="unit">개</span>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="summary-item">
+                                <i>snowing</i>
+                                <dl>
+                                    <dt>산소 공급장치 성능 비교</dt>
+                                    <dd>
+                                        <span class="value">970</span>
+                                        <span class="unit">g/day</span>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="summary-item">
+                                <i>filter_alt</i>
+                                <dl>
+                                    <dt>생물여과조 성능 비교</dt>
+                                    <dd>
+                                        <span class="value">96</span>
+                                        <span class="unit">g/day</span>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="summary-item">
+                                <i>air_purifier</i>
+                                <dl>
+                                    <dt>탈기장치 성능 비교</dt>
+                                    <dd>
+                                        <span class="value">2,840</span>
+                                        <span class="unit">g/day</span>
+                                    </dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <div id="tab-nitrogen" class="list-summary column-3 tab-pane">
+                            222
+                        </div>
+                        <div id="tab-carbon-dioxide" class="list-summary column-3 tab-pane">
+                            333
+                        </div>
+                    </div><!--//tab-content-->
+                </div><!--//body-->
+            </div><!--//section -->
+        </div><!--//page-body-->
+	</div><!--//layout-content-->
+
+    <!-- modal -->
+	<div class="modal fade modal-help" id="modal-help-environment" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">기본 속성값</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">close</button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">이름</th>
+                                <th scope="col">단위</th>
+                                <th scope="col">적정 범위</th>
+                                <th scope="col">설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">목표 출하량</th>
+                                <td>Kg</td>
+                                <td>-</td>
+                                <td>최종적으로 생산을 희망하는 어류 전체 중량의 목표값, 수조 개수 도출 이후, 수조 1개당 출하량으로 보정하여 계산</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">사료 공급률</th>
+                                <td>%</td>
+                                <td>1~4</td>
+                                <td>하루 단위 사료 공급률 (3%)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">평균 수온</th>
+                                <td>°C</td>
+                                <td>17~25</td>
+                                <td>연간 평균수온</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">생물여과조 성능</th>
+                                <td>g/day</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">탈기장치 성능</th>
+                                <td>g/day</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">산소 공급장치 성능</th>
+                                <td>g/day</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">수조당 사육밀도</th>
+                                <td>Kg/m²</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">출력 수조 옵션</th>
+                                <td>선택</td>
+                                <td>-</td>
+                                <td>양식 현장에서 주로 사용하는 수조 규모 (직경) 선택옵션opt 1: 직경 4m, opt 2: 직경 6m, opt 3: 직경 8m, opt 4: 직경 11m</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">유입구-배출구 산소 농도 차이</th>
+                                <td>mg/L</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">유입구-배출구 질소 농도 차이</th>
+                                <td>mg/L</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">유입구-배출구 CO₂ 농도 차이</th>
+                                <td>mg/L</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!--//modal-body-->
+			</div><!--//modal-content-->
+		</div>
+	</div><!--//modal-->
+</body>
+</html>

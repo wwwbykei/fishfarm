@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=1280">
+    <meta name="robots" content="noindex, nofollow">
+    <title>양성 시뮬레이션</title>
+	<link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="layout-sidebar">
+        <a href="index.html" class="header">
+            <img src="images/logo.png" alt="KTAT">
+        </a>
+        <ul class="menu">
+            <li>
+                <a href="index.html"><i>holiday_village</i>양식장 설계 시뮬레이터</a><!--선택한 메뉴에 active 클래스를 추가해 주세요.-->
+                <ul class="menu sub">
+                    <li>
+                        <a href="environment.html">환경 시뮬레이션</a><!--선택한 메뉴에 active 클래스를 추가해 주세요.-->
+                    </li>
+                    <li>
+                        <a href="raise.html" class="active">양성 시뮬레이션</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="water-simulator.html"><i>water_drop</i>양식장 연동 수처리 시뮬레이터</a>
+            </li>
+            <li>
+                <a href="raise-simulator.html"><i>vital_signs</i>양식장 연동 양성 시뮬레이터</a>
+            </li>
+        </ul>
+    </div>
+
+	<div class="layout-content">
+        <div class="page-header">
+            <h1>
+                <span>양성 시뮬레이션</span>
+                <span class="fw-bold">넙치</span>
+            </h1>
+            <div class="align-right list-logo">
+                <img src="images/logo-keti.png" alt="한국전자기술연구원">
+                <img src="images/logo-pukyong.png" alt="부경대학교">
+                <img src="images/logo-etri.png" alt="한국전자통신연구원">
+            </div>
+        </div>
+		<div class="page-body">
+            <form>
+                <div class="section">
+                    <div class="header">
+                        <h3>기본 속성값 입력</h3>
+                        <a data-bs-toggle="modal" data-bs-target="#modal-help-raise" class="btn-m btn-icon">help</a>
+                    </div>
+                    <div class="body">
+                        <ul class="form column-4">
+                            <li class="form-item">
+                                <label>초기 중량</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>g</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>입식 개체수</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>마리</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>사료 공급률</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>%</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>목표 중량</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>g</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>폐사율</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>%</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>평균 수온</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>°C</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <label>TGC 계수</label>
+                                <input type="number">
+                            </li>
+                            <li class="form-item">
+                                <label>최대 양성 기간</label>
+                                <div class="i-wrap suffix">
+                                    <input type="number">
+                                    <span>day</span>
+                                </div>
+                            </li>
+                            <li class="form-item">
+                                <!--버튼 누르기 전, 아래 코드 노출-->
+                                <button type="submit" class="btn-m btn-primary">시뮬레이션 결과 보기</button>
+                                
+                                <!--버튼 누른 다음, 데이터 불러오기 전까지 아래 코드 노출-->
+                                <!-- <button type="submit" class="btn-m btn-primary btn-inactive">시뮬레이션 수행중</button>
+                                <div class="progress"></div> -->
+                            </li>
+                        </ul>
+                    </div><!--//body-->
+                </div><!--//section -->
+            </form>
+            <hr class="line">
+            <div class="section stretch">
+                <div class="header">
+                    <h3>시뮬레이션 결과</h3>
+                </div>
+                <div class="body">
+                    <!--데이터 불러오기 전, 내용 없는 경우-->
+                    <!-- <div class="empty">
+                        <h6>표시할 내용이 없습니다.</h6>
+                        <p>조회할 항목을 선택해 주세요.</p>
+                    </div> -->
+
+                    <!--데이터 불러온 경우-->
+                    <div class="row">
+                        <div class="row-item">
+                            <div class="summary-item horizontal">
+                                <i>calendar_clock</i>
+                                <dl>
+                                    <dt>예상 출하기간</dt>
+                                    <dd>
+                                        <span class="value">87</span>
+                                        <span class="unit">일</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <h6 class="chart-header">총 중량</h6>
+                            <!--차트 넣을 위치
+                                - 크기 : 너비 100%, 높이 330px
+                                - x/y축 라인색 : rgba(#000,0.1)
+                                - x/y축 라벨 : 14px rgba(#000, 0.4)
+                                - 차트 라인 두께 : 2px
+                                - 차트 라인 색 : #2B4486
+                                - 차트 라인 스타일 : solid
+                            -->
+                            <img src="images/chart-raise-weight.png"><!--차트 적용하면 삭제해 주세요. (디자인 확인용)-->
+                        </div><!--//row-item-->
+                        <div class="row-item">
+                            <div class="summary-item horizontal">
+                                <i>scale</i>
+                                <dl>
+                                    <dt>예상 출하량</dt>
+                                    <dd>
+                                        <span class="value">3,501</span>
+                                        <span class="unit">Kg</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <h6 class="chart-header">사료 계수</h6>
+                            <!--차트 넣을 위치
+                                - 크기 : 너비 100%, 높이 330px
+                                - x/y축 라인색 : rgba(#000,0.1)
+                                - x/y축 라벨 : 14px rgba(#000, 0.4)
+                                - 차트 라인 두께 : 2px
+                                - 차트 라인 색 : #2B4486
+                                - 차트 라인 스타일 : solid
+                            -->
+                            <img src="images/chart-raise-feed.png"><!--차트 적용하면 삭제해 주세요. (디자인 확인용)-->
+                        </div><!--//row-item-->
+                    </div><!--//row-->
+                </div><!--//body-->
+            </div><!--//section -->
+        </div><!--//page-body-->
+	</div><!--//layout-content-->
+
+    <!-- modal -->
+	<div class="modal fade modal-help" id="modal-help-raise" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">기본 속성값</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">close</button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">이름</th>
+                                <th scope="col">단위</th>
+                                <th scope="col">적정 범위</th>
+                                <th scope="col">설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">초기 중량</th>
+                                <td>g</td>
+                                <td>0~2000</td>
+                                <td>초기 입하된 무게</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">입식 개체수</th>
+                                <td>마리</td>
+                                <td>-</td>
+                                <td>초기 입하된 개체수</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">사료 공급률</th>
+                                <td>%</td>
+                                <td>1~4</td>
+                                <td>하루 단위 사료 공급률 (3%)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">목표 중량</th>
+                                <td>g</td>
+                                <td>-</td>
+                                <td>목표 출하할 무게</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">폐사율</th>
+                                <td>%</td>
+                                <td>-</td>
+                                <td>전체 성장기간 동안의 폐사율(균등)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">수온</th>
+                                <td>°C</td>
+                                <td>17~25</td>
+                                <td>연간 평균수온</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">TGC 계수</th>
+                                <td>-</td>
+                                <td>0.5~1</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">최대 양성 기간</th>
+                                <td>day</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!--//modal-body-->
+			</div><!--//modal-content-->
+		</div>
+	</div><!--//modal-->
+</body>
+</html>

@@ -1,0 +1,50 @@
+// ---
+// mediaQueries
+// ---
+
+// @mixin small {
+//   @media screen and (max-height: 580px) {
+//     @content;
+//   }
+// }
+// @mixin large {
+//   @media screen and (min-height: 581px) {
+//     @content;
+//   }
+// }
+
+@mixin res--mobile {
+  @media screen and (max-width: #{$tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin res--tablet {
+  @media screen and (min-width: #{$tablet}) { // and (max-width: #{$res--laptop - 1px}) {
+    @content;
+  }
+}
+
+@mixin res--totablet {
+  @media screen and (max-width: #{$laptop - 1px}) {
+    @content;
+  }
+}
+
+// @mixin fromres--laptop {
+//   @media screen and (min-width: #{$laptop}) {
+//     @content;
+//   }
+// }
+
+@mixin res--laptop {
+  @media screen and (min-width: #{$laptop}) { //and (max-width: #{$desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin res--desktop {
+  @media screen and (min-width: #{$desktop}) {
+    @content;
+  }
+}
