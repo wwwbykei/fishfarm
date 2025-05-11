@@ -1,0 +1,167 @@
+// ---
+// modules - table
+// ---
+
+@mixin table-border {
+    border-collapse: collapse;
+    @include bt;
+    thead {
+        th,
+        td {
+            @include bb;
+            @include brl;
+        }
+    }
+    tbody {
+        @include bb(#ddd);
+        th,
+        td {
+            @include brl(#f4f4f4);
+        }
+        tr:not(:last-child) {
+            @include bb(#f4f4f4);
+        }
+    }
+    tr {
+        &.border-double {
+            th,
+            td {
+                border-top: 3px double #ddd;
+            }
+        }
+    }
+    th,
+    td {
+        &:first-child {
+            border-left: 0 !important;
+        }
+        &:last-child {
+            border-right: 0 !important;
+        }
+    }
+}
+@mixin table-underline {
+    border-top: $table-border-top;
+    thead {
+        th,
+        td {
+            @include bb($table-border-color-thead);
+        }
+    }
+    tbody {
+        th,
+        td {
+            @include bb($table-border-color);
+        }
+    }
+}
+
+.table {
+    @if $table-type == border{
+        @include table-border;
+    }
+    @else{
+        @include table-underline;
+    }
+    width: 100%;
+    caption {
+        overflow: hidden;
+        margin-bottom: 12px;
+        span {
+            float: left;
+            margin-top: 8px;
+            font-size: 1.2rem;
+        }
+        button {
+            float: right;
+        }
+    }
+    th,
+    td {
+        max-width:200px;
+        padding: 12px 16px;
+        text-align: left;
+        word-break: break-word;
+    }
+    thead {
+        th,
+        td {
+            background-color: $table-bgcolor-thead;
+            font-size: $table-font-size-thead;
+            color: $table-font-color-thead;
+            vertical-align: middle;
+        }
+    }
+    tbody {
+        th,
+        td {
+            font-size: $table-font-size;
+            vertical-align: top;
+            color:$table-font-color-tbody;
+            &.fw-bold{
+                color:$table-font-color-button;
+                a{
+                    &:hover{
+                        text-decoration:underline;
+                    }
+                }
+            }
+        }
+    }
+    tfoot {
+        th,
+        td {
+            padding: 12px 16px;
+            text-align: right;
+        }
+        a,
+        button {
+            display: inline-block;
+            min-width: 64px;
+            text-align: center;
+        }
+    }
+    tr {
+        &.active {
+            @include fw-bold;
+            color: $color-primary;
+        }
+    }
+}
+// .table-form {
+//     @include bt(#333);
+// }
+
+.table-form{
+    width:100%;
+    th,td{
+        padding-top:4px;
+        padding-bottom:4px;
+        text-align:left;
+        &:not(:first-child){
+            padding-left:2rem;
+        }
+    }
+    thead{
+        th,td{
+            font-size:1.2rem;
+            white-space:nowrap;
+            opacity:.4;
+        }
+    }
+    tbody{
+        th,td{
+            font-size:1.6rem;
+            vertical-align:middle;
+        }
+    }
+    tfoot{
+        th,td{
+            font-size:1.4rem;
+        }
+    }
+}
+
+.table-fixed{
+    table-layout:fixed;
+}

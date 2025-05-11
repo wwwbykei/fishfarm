@@ -1,0 +1,214 @@
+// ---
+// variables (global)
+// ---
+
+// -------
+// color
+// -------
+$color-theme: light;
+$color-common-light: #fff;
+$color-common-dark: #000;
+$color-common: if($color-theme == light, $color-common-dark, $color-common-light);
+
+$blue: #2B4486;
+$blue-dark:#000A14;
+$blue-dark-light:#14191E;
+$brown: #BF7657;
+$green: #336F51;
+$light-gray: rgba($blue,.05);
+$light-orange: #DDC5BB;
+$magenta: #C23188;
+$orange: #D69054;
+$red: #B12C23;
+$violet: #B264BF;
+$vivid-green: #4DCC4B;
+$yellow: #E5C348;
+$yellow-green: #98AB4C;
+
+$bus-blue: #008ACE;
+$bus-green: #31A457;
+$bus-red: #CC262A;
+$bus-violet: #7470B1;
+$bus-yellow: #ECB834;
+
+$color-primary: $blue;
+$color-secondary: #000;
+
+// -------
+// * z-index
+// -------
+$z-sidebar: 200;
+$zindex-modal-backdrop: 1050 !default;
+$zindex-modal: 1055 !default;
+
+
+// -------
+// * layout
+// -------
+
+// Break Point
+$tablet: 768px;
+$laptop: 1200px;
+$desktop: 1680px;
+
+// Size
+$min-width: 1280px;
+$sidebar-width: 280px;
+$sidebar-width-min: 240px;
+
+// -------
+// * margin, padding
+// -------
+$gutter-l: 8rem;
+$gutter-m: 4rem;
+$gutter-s: 2rem;
+
+// -------
+// * Border, Background
+// -------
+$border-width: 1px !default;
+$border-color-base: rgba($color-common,.1);
+$border-radius-base: 4px;
+$bg-color-base: #fff;
+
+// -------
+// * Button
+// -------
+$button-size: medium;//large,medium,small
+$button-radius: $border-radius-base;//or half;
+$button-primary-text-color: #fff;
+$button-secondary-text-color: #fff;
+$button-border-color: rgba($color-common,.1);
+$button-outline-bgcolor: #fff;
+
+// -------
+// * Form
+// -------
+$i-size: $button-size;
+$i-style: border;//underline or border
+$i-radius-base: $border-radius-base;
+$form-item-gutter: 2rem;
+$i-padding-small-top: 6px;
+$i-padding-small-side: 12px;
+$i-padding-medium-top: 7px;
+$i-padding-medium-side: 16px;
+$i-padding-large-top: 14px;
+$i-padding-large-side: 32px;
+$i-background-color: transparent;
+$i-label-color: if($color-theme == light, rgba($color-common-dark,0.5), rgba($color-common-light,0.5));//rgba($color-common,0.5);
+$i-border-color: if($color-theme == light, rgba($color-common-dark,0.2), rgba($color-common-light,0.2));//rgba($color-common-light,0.2);
+$i-color: if($color-theme == light, rgba($color-common-dark,1), rgba($color-common-light,1));//$color-common;
+$i-border-color-focus: $color-primary;
+
+// -------
+// * table
+// -------
+$table-type: underline;//underline or border
+$table-border-color: rgba($color-common,.2);
+$table-border-top: 1px solid $color-common;
+$table-border-color-thead: $table-border-color;
+$table-bgcolor-thead : $light-gray;
+$table-font-size: 1.4rem;
+$table-font-size-thead: $table-font-size;
+$table-font-color-thead: rgba($color-common,.6);
+$table-font-color-tbody: rgba($color-common,.8);
+$table-font-color-button: $color-common;
+
+// -------
+// * image
+// -------
+$path-image: "../images/";
+$image-radius: 0;
+$image-bgcolor: rgba($color-common,.03);
+
+// -------
+// * font
+// -------
+$font-size-base: 10px;
+$line-height-base: 1.5 !default;
+$font-family-base: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,"Apple SD Gothic Neo","Noto Sans KR","Spoqa Han Sans Neo","Malgun Gothic",sans-serif;
+$fw-b: 700;
+$fw-m: 500;
+$fw-r: 400;
+$fw-l: 300;
+$font-color-base: rgba($color-common,.9);
+
+// -------
+// * pagination
+// -------
+$pagination-size: 40px;
+$pagination-gutter: $gutter-m;
+$pagination-arrow-size: 2.4rem;
+$pagination-arrow-color: $color-common;
+$pagination-font-size: 1.4rem;
+$pagination-font-color: $color-common;
+$pagination-font-color-active: #fff;
+$pagination-bgcolor-active: $color-primary;
+
+// -------
+// * tab menu
+// -------
+$tab-style: border;//border, underline
+$tab-size:$button-size;
+
+// -------
+// * Modals
+// -------
+$modal-inner-padding:               0;//$gutter-s;
+
+$modal-footer-margin-between:       .5rem !default;
+
+$modal-dialog-margin:               2rem !default;
+$modal-dialog-margin-y-sm-up:       1.75rem !default;
+
+$modal-title-font-size: 1.6rem;
+$modal-title-align: left;
+$modal-title-line-height:           $line-height-base !default;
+
+$modal-content-color:               null !default;
+$modal-content-bg:                  #fff !default;
+$modal-content-border-color:        none !default;
+$modal-content-border-width:        $border-width !default;
+$modal-content-border-radius:       0 !default;
+$modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
+
+$modal-backdrop-bg:                 #fff !default;
+$modal-backdrop-opacity:            .5 !default;
+$modal-header-padding-y:            $modal-inner-padding !default;
+$modal-header-padding-x:            $modal-inner-padding !default;
+$modal-header-padding:              $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
+
+$modal-sm:                          300px !default;
+$modal-md:                          500px !default;
+$modal-lg:                          800px !default;
+$modal-xl:                          1140px !default;
+
+$modal-fade-transform:              translate(0, -50px) !default;
+$modal-show-transform:              none !default;
+$modal-transition:                  transform .3s ease-out !default;
+$modal-scale-transform:             scale(1.02) !default;
+
+// -------
+// * chart
+// -------
+$chart-line-weight: 2px;
+$chart-label-line-width: 24px;
+$chart-label-gutter: 12px;
+$chart-label-font-size: 1.4rem;
+$chart-label-font-weight: normal;
+
+// -------
+// * progress
+// -------
+$progress-size: 80px;
+$progress-weight: 2px;
+$progress-color: $color-primary;
+
+// -------
+// * range slider
+// -------
+$rs-width: 240px;
+$rs-height: 40px;
+$rs-barheight: 6px;
+$rs-bgcolor: rgba($color-primary,.2);
+$rs-barcolor: $color-primary;

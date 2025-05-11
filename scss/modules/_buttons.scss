@@ -1,0 +1,169 @@
+// ---
+// modules - buttons
+// ---
+
+@mixin btn{
+	display:flex;
+	flex-direction:row;
+	align-items: center;
+	justify-content:center;
+	text-align:center;
+	@include break;
+	@include nowrap;
+    i{
+		@include material-symbols-outlined;
+    }
+}
+.btn-icon{
+	@include material-symbols-outlined;
+}
+.btn-m{
+    @include btn;
+	gap: 4px;
+	padding:7px 16px;
+	@if $button-radius == "half"{
+        @include radius(18px);
+    }
+    @else{
+        @include radius($button-radius);
+    }
+	font-size:1.4rem;
+	line-height:2rem;
+	i{
+		font-size:2rem;
+	}
+	&.btn-icon{
+        width:36px;
+        height:36px;
+		font-size:2rem;
+    }
+}
+.btn-l{
+    @include btn;
+	gap:6px;
+	padding:13px 24px;	
+    @if $button-radius == "half"{
+        @include radius(26px);
+    }
+    @else{
+        @include radius($button-radius);
+    }
+	font-size:1.6rem;
+	i{
+		font-size:2.4rem;
+		line-height:1;
+	}
+    &.btn-icon{
+        width:52px;
+        height:52px;
+		font-size:2.4rem;
+    }
+}
+@mixin btn-primary{
+	@include b($color-primary);
+	@include bg($color-primary);
+	@include fw-medium;
+	color:$button-primary-text-color;
+}
+.btn-primary{
+	@include btn-primary;
+	&:hover{
+		@include opacity(.6);
+	}
+}
+@mixin btn-black{
+	@include b(rgba(#000,.5));
+	@include bg(rgba(#000,.5));
+	@include fw-medium;
+	color:#fff;
+}
+.btn-black{
+	@include btn-black;
+	&:hover{
+		@include opacity(.6);
+	}
+}
+@mixin btn-red{
+	@include b($red);
+	@include bg(rgba($red,.5));
+	@include fw-medium;
+	color:#fff;
+}
+.btn-red{
+	@include btn-red;
+	&:hover{
+		@include opacity(.6);
+	}
+}
+@mixin btn-outline{
+	@include b($button-border-color);
+    background-color: $button-outline-bgcolor;
+}
+.btn-outline{
+	@include btn-outline;
+	&:hover{
+		@include opacity(.6);
+	}
+}
+.btn-outline-white{
+	@include b(rgba(#fff,.2));
+	color:#fff;
+	&:hover{
+		@include opacity(.6);
+	}
+}
+.btn-outline-black{
+	@include b(rgba(#000,.2));
+	color:#000;
+	&:hover{
+		@include opacity(.6);
+	}
+}
+.btn-outline-red{
+	@include b($red);
+	color:$red;
+	&:hover{
+		@include opacity(.6);
+	}
+}
+.btn-close{
+    @include material-symbols-outlined;
+    font-size:2.4rem;
+}
+.btn-img{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	gap:$gutter-s;
+	position:relative;
+	width:180px;
+	padding:$gutter-s;
+	border-radius:$border-radius-base;
+	background-color:#fff;
+	.label{
+		position:absolute;
+		top:12px;
+		left:12px;
+	}
+	i{
+		color:$color-primary;
+		opacity:.6;
+	}
+	p{
+		text-align:center;
+		font-size:1.4rem;
+		@include fw-medium;
+	}
+	&.active{
+		background-color:$color-primary;
+		i, p{
+			color:#fff;
+			opacity:1;
+		}
+	}
+}
+.btn-inactive{
+	opacity:.6;
+	cursor: not-allowed;
+    pointer-events: none;
+}

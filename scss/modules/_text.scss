@@ -1,0 +1,12 @@
+// ---
+// module - text
+// ---
+
+.label{
+    display:block;
+    padding: 1px 4px;
+    border-radius: $border-radius-base;
+    background-color: rgba($color-primary,.6);
+    color:#fff;
+    white-space:nowrap;
+}
