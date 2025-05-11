@@ -37,17 +37,10 @@ $color-secondary: #000;
 // -------
 // * z-index
 // -------
-// $z-header: 200; //헤더
-// $z-header-dim: 210; //헤더 Dim (모바일 전용)
-// $z-header-nav: 220; //헤더 네비게이션
-// $z-burger: 300; //버거 아이콘
 $z-sidebar: 200;
-$zindex-modal-backdrop:             1050 !default;
-$zindex-modal:                      1055 !default;
-// $z-loading: 100; //로딩 이미지
-// $z-fixed-bar: 50; //결제 화면의 하단 고정 바
-// $z-header-account-lt: 100;
-// $z-header-user-lt: 200;
+$zindex-modal-backdrop: 1050 !default;
+$zindex-modal: 1055 !default;
+
 
 // -------
 // * layout
@@ -60,18 +53,12 @@ $desktop: 1680px;
 
 // Size
 $min-width: 1280px;
-// $max-width: 540px;
-// $max-width-res--laptop-lg: 980px;
-// $max-width-res--laptop-md: 640px;
-// $max-width-mobile: 460px;
-// $header-height: 84px;
 $sidebar-width: 280px;
 $sidebar-width-min: 240px;
 
 // -------
 // * margin, padding
 // -------
-// $spacer: 1rem !default;
 $gutter-l: 8rem;
 $gutter-m: 4rem;
 $gutter-s: 2rem;
@@ -167,7 +154,7 @@ $tab-size:$button-size;
 // -------
 // * Modals
 // -------
-$modal-inner-padding:               0;//$spacer !default;
+$modal-inner-padding:               0;//$gutter-s;
 
 $modal-footer-margin-between:       .5rem !default;
 
@@ -217,7 +204,9 @@ $progress-size: 80px;
 $progress-weight: 2px;
 $progress-color: $color-primary;
 
-//range slider
+// -------
+// * range slider
+// -------
 $rs-width: 240px;
 $rs-height: 40px;
 $rs-barheight: 6px;

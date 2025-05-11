@@ -148,7 +148,6 @@ hr{
     background-color: $color;
 }
 
-// @mixin bgimg($img,$x:50%,$y:50%,$repeat:no-repeat){background-image:url("../images/${img}");background-position:$x $y;background-repeat:$repeat}
 @mixin bgi($imageName, $size:contain, $type: "png") {
     background-image: url(#{$path-image}#{$imageName}.#{$type}) !important;
     background-repeat: no-repeat;
@@ -303,33 +302,9 @@ hr{
     font-display: block;
     -webkit-font-smoothing: antialiased;
 }
-
-// .text-666 {
-//     color: #666;
-// }
-
-// .text-999 {
-//     color: #999;
-// }
-
-// .text-green {
-//     color: $green;
-// }
-
 .text-red {
     color: $red;
 }
-
-// .text-red-light {
-//     color: $red-light;
-// }
-
-// .text-brown-gray {
-//     color: $brown-gray;
-// }
-// .text-brown-gray-light {
-//     color: $brown-gray-light;
-// }
 
 @mixin pointer($property: pointer) {
     cursor: $property;
@@ -339,7 +314,6 @@ hr{
     vertical-align: $property;
 }
 
-// @mixin valign{@include valign();}
 @mixin z($property) {
     z-index: $property;
 }
@@ -491,9 +465,8 @@ hr{
     margin-top: calc(-1 * $height / 2);
     margin-left: calc(-1 * $width / 2);
 }
-@mixin scroll-y{//($height: 280px){
+@mixin scroll-y{
     overflow-y:auto;
-    // max-height: $height;
 }
 .scroll-y{
     @include scroll-y;
@@ -516,7 +489,6 @@ hr{
         clear: both;
         float: left;
         min-width: $dt-width;
-        // margin-right:40px;
     }
 
     dd {
@@ -533,7 +505,6 @@ hr{
         width: $dt-width;
         background-color: $dt-color;
         text-align: left;
-        // vertical-align: top;
     }
 
     dd {
@@ -560,11 +531,6 @@ hr{
         margin-right: 6px;
         transform: translateY(-50%);
         background-color: $color;
-
-        //res--laptop
-        // @include res--laptop {
-        //   top: 11px;
-        // }
     }
 }
 @mixin bullet-solid($color: #000, $opacity: 1, $width: $chart-label-line-width, $height: $chart-line-weight) {
